@@ -73,7 +73,7 @@ GoQuorum
 Gradle
 Grafana
 gRPC
-G?Wei
+Gwei
 Hashi[cC]orp
 Helmfile
 Hexagate
