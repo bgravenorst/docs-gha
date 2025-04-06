@@ -10,8 +10,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     # oras-project/setup-oras@v1
     - name: Setup oras

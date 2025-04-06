@@ -7,7 +7,7 @@ inputs:
   CONFIG_FILE:
     description: 'markdownlint config file'
     required: false
-    default: ".docs-gha/lint-markdown/.markdownlint.yaml"
+    default: ".github-actions/lint-markdown/.markdownlint.yaml"
   FILEPATHS:
     description: 'Filepaths to look at, specified as a comma separated string ie "docs/**/*.md,blog/**/*.md,etc"'
     required: false
@@ -19,8 +19,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     # 2f7c5bfce28377bc069a65ba478de0a74aa0ca32 = v46.0.1 as at 18032025
     - uses: tj-actions/changed-files@2f7c5bfce28377bc069a65ba478de0a74aa0ca32

@@ -17,8 +17,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     - name: MetaMask Security Code Scanner
       uses: MetaMask/Security-Code-Scanner@main

@@ -15,8 +15,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     - uses: actions/setup-python@v5
       with:
@@ -28,7 +28,7 @@ runs:
       with:
         files: ${{ inputs.FILEPATHS }}
         separator: ","
-        vale_flags: "--config .docs-gha/spelling/.vale.ini --glob={*.md,*.mdx}"
+        vale_flags: "--config .github-actions/spelling/.vale.ini --glob={*.md,*.mdx}"
         # fail_on_error: true
         reporter: github-pr-check
 

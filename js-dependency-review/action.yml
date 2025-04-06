@@ -8,8 +8,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     - name: Dependency Review
       uses: actions/dependency-review-action@v4

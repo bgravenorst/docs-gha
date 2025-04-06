@@ -19,7 +19,7 @@ inputs:
   CONFIG_FILE:
     description: 'default config file.'
     required: false
-    default: .docs-gha/linkcheck/config/link-check.json
+    default: .github-actions/linkcheck/config/link-check.json
   MODIFIED_FILES_ONLY:
     description: 'check modified files only'
     required: false
@@ -31,8 +31,8 @@ runs:
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
-        repository: Consensys/docs-gha
-        path: .docs-gha
+        repository: Consensys/github-actions
+        path: .github-actions
 
     # 5c5dfc0ac2e225883c0e5f03a85311ec2830d368 = v1 as at 24092024
     # use-quiet-mode: only show errors in output
