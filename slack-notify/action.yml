@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: Apache-2.0
+---
+name: 'slack-notify'
+description: 'Composite action to slack notify channels'
+
+inputs:
+  SLACK_USERNAME:
+    description: 'the username to use'
+    required: false
+    default: 'ci'
+  SLACK_CHANNEL:
+    description: 'the name of the slack channel'
+    required: true
+  SLACK_WEBHOOK:
+    description: 'the webhook to use'
+    required: true    
+  SLACK_COLOR:
+    description: 'the webhook to use'
+    required: false
+    default: 'good'
+  SLACK_TITLE:
+    description: 'the message title'
+    required: true
+    default: ''
+  SLACK_CUSTOM_PAYLOAD:    
+    description: 'the message'
+    required: false
+    default: ''
+  MSG_MINIMAL:
+    description: 'keep messages minimal'
+    required: false
+    default: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout tools repo
+      uses: actions/checkout@v4
+      with:
+        repository: Consensys/github-actions
+        path: .github-actions
+
+    - name: Slack notify
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_USERNAME: ${{ inputs.SLACK_USERNAME }}
+        SLACK_WEBHOOK: ${{ inputs.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: ${{ inputs.SLACK_CHANNEL }}
+        SLACK_COLOR: ${{ inputs.SLACK_COLOR }}
+        SLACK_TITLE: ${{ inputs.SLACK_TITLE }}
+        SLACK_CUSTOM_PAYLOAD: ${{ inputs.SLACK_CUSTOM_PAYLOAD }}
+        MSG_MINIMAL: ${{ inputs.MSG_MINIMAL }}

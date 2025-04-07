@@ -7,7 +7,7 @@ inputs:
   CONFIG_FILE:
     description: 'markdownlint config file'
     required: false
-    default: ".github-actions/lint-markdown/.markdownlint.yaml"
+    default: ".github-actions/docs-lint-markdown/.markdownlint.yaml"
   FILEPATHS:
     description: 'Filepaths to look at, specified as a comma separated string ie "docs/**/*.md,blog/**/*.md,etc"'
     required: false

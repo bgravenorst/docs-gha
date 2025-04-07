@@ -19,7 +19,7 @@ inputs:
   CONFIG_FILE:
     description: 'default config file.'
     required: false
-    default: .github-actions/linkcheck/config/link-check.json
+    default: .github-actions/docs-link-check/config/link-check.json
   MODIFIED_FILES_ONLY:
     description: 'check modified files only'
     required: false

@@ -28,7 +28,7 @@ runs:
       with:
         files: ${{ inputs.FILEPATHS }}
         separator: ","
-        vale_flags: "--config .github-actions/spelling/.vale.ini --glob={*.md,*.mdx}"
+        vale_flags: "--config .github-actions/docs-spelling-check/.vale.ini --glob={*.md,*.mdx}"
         # fail_on_error: true
         reporter: github-pr-check
 
