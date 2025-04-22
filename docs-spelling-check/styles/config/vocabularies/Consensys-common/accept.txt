@@ -165,6 +165,7 @@ Pyth
 Raft
 ReadTheDocs
 [rR]ebas(?:e|es|ing|ed)?
+[rR]edelegat(?:e|es|ing|ed|ion|ions)?
 Redis
 [rR]edistributable[s]?
 Redocusaurus
