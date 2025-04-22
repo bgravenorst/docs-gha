@@ -1059,10 +1059,6 @@ recieve
 reconnections
 recrawl
 redcircle
-redelegate
-redelegated
-redelegating
-redelegation
 redirections
 redoc
 redocly
@@ -1118,6 +1114,7 @@ satoshi
 saurus
 sauzs
 sbox
+scas
 scaleway
 scamfari
 schnorr
@@ -1125,6 +1122,7 @@ scopechat
 scopescan
 scriptable
 scry
+sdks
 sdk's
 searchbar
 sebastien
@@ -1185,6 +1183,7 @@ snonce
 socialscan
 socure
 solana
+solana's
 somer
 soulbound
 sourcify
