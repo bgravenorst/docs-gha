@@ -18,7 +18,7 @@ runs:
       id: checks-version
       shell: bash      
       run:  |
-        # Calculate Web3Signer version
+        # Calculate version
         output=$(./gradlew -q printVersion)
         # Extract specific-version and publish-version from the output
         specific_version=$(echo "$output" | grep -oP 'specific-version=\K.*')
