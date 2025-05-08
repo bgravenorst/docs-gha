@@ -74,7 +74,7 @@ GoQuorum
 Gradle
 Grafana
 gRPC
-G?wei
+[Gg]?wei
 Hashi[cC]orp
 Helmfile
 Hexagate
@@ -131,6 +131,7 @@ Mobula
 [nN]avbar
 Nethermind
 Nginx
+Nodefleet
 Node.js
 [nN]once[s]?
 npm
@@ -152,6 +153,7 @@ Pegasys
 [Pp]recompile[s]?
 Photoshop
 Postgres
+Powershell
 PoW
 P-Chain
 [pP]reidentif(?:y|ied)
@@ -214,7 +216,7 @@ tmux
 [tT]ruststore[s]?
 UAs
 [uU]nderflow[s]?
-[uU]encrypt(?:ing|ed)?
+[uU]nencrypt(?:ing|ed)?
 [uU]niswap
 [uU]nichain
 [uU]nmarshal(?:ing|ed)?
