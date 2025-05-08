@@ -1,0 +1,13 @@
+{
+  "name": "docs-firecrawl-llm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@mendable/firecrawl-js": "^1.24.0",
+    "dotenv": "^16.4.7"
+  },
+  "scripts": {
+    "llms": "node index.js"
+  }
+}
