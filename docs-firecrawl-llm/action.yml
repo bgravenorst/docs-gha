@@ -29,7 +29,6 @@ runs:
       uses: actions/checkout@v4
       with:
         repository: Consensys/github-actions
-        ref: firecrawl 
         path: .github-actions
 
     - name: read .nvmrc

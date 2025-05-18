@@ -1,0 +1,67 @@
+---
+name: 'download-artifact-from-private-repo'
+description: 'Composite action to download artifact from private repo using a github app'
+
+inputs:
+  github_app_id:
+    description: 'the github app id'
+    required: true
+  github_app_private_key:
+    description: 'the github app private key'
+    required: true    
+  org:
+    description: 'the repo to fetch artifacts from'
+    required: false
+    default: 'Consensys'
+  repository:
+    description: 'the repo to fetch artifacts from'
+    required: false
+  commit_sha:
+    description: 'the github commit sha to use'
+    required: true
+  artifact_name:
+    description: 'the artifact name or id to fetch'
+    required: true
+  download_path:
+    description: 'the path to save to'
+    required: true
+
+
+runs:
+  using: "composite"
+  steps:
+
+    - name: generate token to fetch artifacts from private repos
+      id: generate_github_token
+      uses: getsentry/action-github-app-token@v3
+      with:
+        private_key: ${{ inputs.github_app_private_key }}
+        app_id: ${{ inputs.github_app_id }}
+        repository: '${{ inputs.org }}/${{ inputs.repository }}'
+
+    - name: get workflow of the run for the given commit hash
+      id: get_run_id
+      uses: actions/github-script@v7
+      with:
+        github-token: '${{ steps.generate_github_token.outputs.token }}'
+        result-encoding: string          
+        script: |
+          const org = '${{ inputs.org }}'
+          const repo = '${{ inputs.repository }}'
+          const commitSha = '${{ inputs.commitSha }}'
+          const runs = await github.rest.actions.listWorkflowRunsForRepo({
+            owner: org,
+            repo: repo,
+            head_sha: commitSha
+          });
+          console.log(runs.data.workflow_runs[0].id);
+          return runs.data.workflow_runs[0].id  
+
+    - name: download the artifact
+      uses: actions/download-artifact@v4
+      with:
+        github-token: ${{ steps.generate_github_token.outputs.token }}
+        repository: '${{ inputs.org }}/${{ inputs.repository }}'
+        name: '${{ inputs.artifact_name }}'
+        path: '${{ inputs.download_path }}'
+        run-id: '${{ steps.get_run_id.outputs.result }}'
