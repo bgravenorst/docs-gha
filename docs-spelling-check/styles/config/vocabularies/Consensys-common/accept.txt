@@ -184,6 +184,7 @@ RPCs
 Scamfari
 Scopescan
 [sS]ecretName
+Sei
 Sentio
 [sS]epolia
 [sS]erializ(?:e|ing)
